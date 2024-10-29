@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.caro {
+    border: 10px solid black;
+}
+
+body {
+    background: linear-gradient(to right, #000000, #434343)
+}
+
+section {
+    /* width: 100%;
+    height: 100vh; */
+    /* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("IMG/bg2.jpg"); */
+    /* background-size: cover;
+    background-position: center; */
+
+}
+
+/* .video{
+    width: 100%;
+} */
+.nav-bar {
+    background-color: rgba(0, 0, 0, 0.699) !important;
+}
+
+.faci {
+    background-color: darkgray;
+}
+
+.animated-text {
+    animation: fadeIn 5s ease alternate;
+    ;
+    font-weight: bold;
+}
+
+.ptext {
+
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated-image {
+    animation: slideLeftAnimation 5s ease-in-out;
+}
+
+@keyframes slideLeftAnimation {
+    0% {
+        transform: translateX(100%);
+       
+    }
+
+    100% {
+        transform: translateX(0);
+        
+    }
+}
+
+.card {
+    height: 400px;
+    
+}
+
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+
+.activities {
+    color: white;
+    font-weight: bold;
+}
+
+/* .btext{
+    background-color: rgba(0, 0, 0, 0.5);color: rgba(245, 245, 245, 0.836);
+    font-size: large;
+    padding: 30px;
+    position: absolute; */
+.video-container {
+    position: relative;
+}
+
+#video {
+    width: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.text-overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.text-overlay p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .text-overlay {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .text-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .text-overlay p {
+        font-size: 1rem;
+    }
+}
+
+
+
+.video{
+    width: 100% !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vidcontent{
+    position: absolute;
+    /* top: 56%;
+    left: 10%; */
+
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+
+
+.top {
+    width: 300px;
+}
+
+.carousel-item img {
+    height: 500px;
+   
+    width: 100%;
+  
+    object-fit: cover;
+}
+
+.navbar-nav li {
+    position: relative;
+    text-decoration: none;
+}
+
+.navbar-nav li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 0%;
+    background-color: yellow;
+    transition: width 0.5s ease;
+}
+
+.navbar-nav li:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link {
+    color: blue;
+    text-decoration: none;
+    
+    position: relative;
+}
+
+.social-media {
+    list-style: none;
+    
+    padding: 0;
+  
+}
+
+.social-media li {
+    margin-right: 10px;
+    
+}
+
+.btext h1 {
+    text-align: center;
+}
+
+.card-img-top {
+    transition: transform 0.3s;
+    border: black solid 2px;
+}
+
+.card-img-top:hover {
+    transform: scale(1.1);
+   
+}
+
+.ctext {
+    color: white;
+    font-weight: bold;
+}
+.animated-text {
+    opacity: 0; 
+    animation: fadeInAnimation 2s ease-in forwards; 
+  }
+  
+
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0.1; 
+    }
+    to {
+      opacity: 1; 
+    }
+  }

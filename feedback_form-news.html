@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!--link=> font awesome 4.7 cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+         .reviewcon {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+    body {
+        background: linear-gradient(to right, #2c3e50, #bdc3c7);
+    }
+    
+    .navbar-brand img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .footer {
+        padding: 40px 0;
+        color: #fff;
+    }
+    
+    .social-media li {
+        margin: 0 10px;
+    }
+    
+    .social-media img {
+        max-width: 30px;
+        height: auto;
+    }
+    
+ .stars {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        list-style: none;
+        transform: rotate(180deg);
+        list-style-type: none;
+        padding-inline-start: 0;
+      }
+      .stars input[type="radio"] {
+        display: none;
+      }
+
+      .stars label {
+        font-size: 40px;
+        color: #ccc;
+        cursor: pointer;
+        list-style: none;
+        transform: rotate(180deg);
+      }
+
+      .stars label:hover,
+      .stars label:hover ~ label,
+      .stars input:checked ~ label {
+        color: #ffcc00;
+      }
+
+      #rating {
+        font-size: 20px;
+        margin-top: 10px;
+        color: #333;
+      }
+
+      #review-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+      }
+
+      #review-btn:hover {
+        background-color: #0056b3;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+      .social-media {
+    list-style: none;
+   
+    padding: 0;
+    
+}
+
+.social-media li {
+    margin-right: 10px;
+    
+}
+</style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html"><img src="logo.png" alt="logo" width="205" height="50"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">FACILITIES</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="indoor.html">INDOOR</a></li>
+                            <li><a class="dropdown-item" href="out.html">OUTDOOR</a></li>
+                            <li><a class="dropdown-item" href="recreation.html">RECREATION</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="membershipform.html">MEMBERSHIP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback_form-news.html">FEEDBACK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">CONTACT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">PHOTO GALLERY</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <div class="container reviewcon mt-5">
+      <h2>Please Rate Us</h2>
+      <div class="stars">
+        <input type="radio" id="star5" name="rating" value="5" /><label
+          for="star5"
+          >&#9733;</label
+        >
+        <input type="radio" id="star4" name="rating" value="4" /><label
+          for="star4"
+          >&#9733;</label
+        >
+        <input type="radio" id="star3" name="rating" value="3" /><label
+          for="star3"
+          >&#9733;</label
+        >
+        <input type="radio" id="star2" name="rating" value="2" /><label
+          for="star2"
+          >&#9733;</label
+        >
+        <input type="radio" id="star1" name="rating" value="1" /><label
+          for="star1"
+          >&#9733;</label
+        >
+      </div>
+      <div id="rating"></div>
+      <textarea
+        id="comment"
+        placeholder="Leave your comments here..."
+      ></textarea>
+      <button id="review-btn" type="button">Submit Review</button>
+    </div>
+
+    <script>
+      const stars = document.querySelectorAll(".stars input");
+      const ratingDisplay = document.getElementById("rating");
+      const commentInput = document.getElementById("comment");
+      const reviewBtn = document.getElementById("review-btn");
+
+      stars.forEach((star) => {
+        star.addEventListener("change", (e) => {
+          ratingDisplay.textContent = `You rated us ${e.target.value} stars.`;
+        });
+      });
+
+      reviewBtn.addEventListener("click", () => {
+        const checkedStar = document.querySelector(".stars input:checked");
+        const comment = commentInput.value.trim();
+        if (checkedStar) {
+          alert(
+            `Thank you for your ${checkedStar.value}-star review!${
+              comment ? `\n\nComment: ${comment}` : ""
+            }`
+          );
+        } else {
+          alert("Please select a rating before submitting your review.");
+        }
+      });
+    </script>
+   <footer class="footer bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <span class="secnd-text">connect with us:</span>
+          <ul class="social-media d-flex justify-content-center">
+  
+            <li><a href="https://www.facebook.com/login/" target="_blank"> <img src="IMG/icons8-facebook-48.png" alt=""></i></a></li>
+            <li><a href="https://www.whatsapp.com/" target="_blank"> <img src="IMG/icons8-whatsapp-48.png" alt=""></a></li>
+            <li><a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><img src="IMG/icons8-instagram-48.png"
+                  alt=""></a></li>
+            <li><a href="https://twitter.com/login" target="_blank"><img src="IMG/icons8-twitter-48.png"  alt=""></a></li>
+          </ul>
+  
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>CONTACT</h5>
+              <p>Inquiries: For any inquiries, questions, or commendations, please call: <a href="tel:+97165610080">+971
+                  6 561 0080</a> or fill out the following form.</p>
+            </div>
+            <div class="col-md-6">
+              <h5>Head Office</h5>
+              <address>
+                <p>Al Rayan Sports LLC<br>
+                  PO Box 31482<br>
+                  Near Maysaloon Park<br>
+                  Sharjah, UAE<br>
+                  Tel: <a href="tel:+97165610080">+971 6 561 0080</a><br>
+                  Fax: +971 6 561 0081</p>
+              </address>
+            </div>
+            <div class="col-md-12">
+              <h5>EMPLOYMENT</h5>
+              <p>To apply for a job with Rayan Sports, please send a cover letter together with your CV to: <a
+                  href="mailto:hr@rayansports.com">hr@rayansports.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>

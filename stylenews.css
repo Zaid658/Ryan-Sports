@@ -1,0 +1,59 @@
+
+
+
+
+/* rating star css */
+
+
+.wrapper {
+    width: 280px;
+    height: 100px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(0, 0) rotateY(180deg);
+    /* border: 1px solid black; */
+}
+
+.wrapper p {
+    transform: translate(0, 0) rotateY(180deg);
+    color: aliceblue;
+
+}
+
+.wrapper input {
+    display: none;
+} */
+
+/* /* .wrapper label {
+    cursor: pointer;
+} */
+
+.wrapper label::before {
+    content: '\f005';
+    font-family: fontawesome;
+    position: relative;
+    font-size: 200%;
+}
+
+.wrapper label::after {
+    content: '\f005';
+    font-family: fontawesome;
+    position: absolute;
+    font-size: 200%;
+    color: yellow;
+    display: block;
+    top: 49px;
+    opacity: 0;
+    transition: .3s;
+    text-shadow: 0 2px 5px rgb(0, 0, 0, .8);
+
+}
+
+.wrapper label:hover::after,
+.wrapper label:hover~label::after,
+.wrapper input:checked~label::after {
+    opacity: 1;
+
+}
